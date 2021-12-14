@@ -1,7 +1,7 @@
 require_relative "lib/tdrb/version"
 
 Gem::Specification.new do |s|
-  s.name        = 'tdrb'
+  s.name        = "tdrb"
   s.version     = TDRB::VERSION
 
   s.summary     = "Ruby + Traindown = TDRB"
@@ -10,14 +10,14 @@ Gem::Specification.new do |s|
   s.authors     = ["Tyler Scott"]
   s.email       = "tyler@greaterscott.com"
 
-  s.files       = ["lib/tdrb.rb"]
+  s.files       = Dir["lib/**/*.rb"]
 
-  s.homepage    = 'https://traindown.com'
-  s.license     = 'BSD 3 Clause'
+  s.homepage    = "https://traindown.com"
+  s.license     = "BSD-3-Clause"
 
   s.metadata["homepage_uri"]    = s.homepage
   s.metadata["source_code_uri"] = s.homepage
   s.metadata["changelog_uri"]   = s.homepage
 
-  s.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  s.required_ruby_version = Gem::Requirement.new(">= 2.7.0")
 end

@@ -36,12 +36,12 @@ module TDRB
     end
 
     def next_char
-      return @stack << Token::EOF && Token::EOF if chars.count.pred == @start
+      return @stack << Token::EOF && Token::EOF if chars.count.pred == @pos
 
       sub_source = source[@pos..]
       @pos += 1
 
-      return @stack << Token::EOF && Token::EOF if sub_source.empty?
+      return @stack << Token::EOF && Token::EOF if sub_source.nil?
 
       @stack << sub_source[0] && sub_source[0]
     end
