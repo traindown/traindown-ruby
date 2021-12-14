@@ -152,7 +152,7 @@ module TDRB
 
       char = lexer.next_char
 
-      while !line_terminator?(chr) do
+      while !line_terminator?(char) do
         char = lexer.next_char
       end
 

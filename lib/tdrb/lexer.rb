@@ -54,7 +54,7 @@ module TDRB
     end
 
     def pop_stack
-      @stack.pop || TDRB::Token::EOF
+      @stack.pop || Token::EOF
     end
 
     def rewind

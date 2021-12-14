@@ -19,6 +19,18 @@ class TokenTest < Minitest::Test
     assert_equal(base == other, false)
   end
 
+  def test_triple_equals
+    base, other =
+      TDRB::Token::TOKEN_SYMBOLS
+        .sample(2)
+        .map { |ts| TDRB::Token.send(ts, YOUR_MOM) }
+
+    assert_equal(base === base.type, true)
+    refute(base === other.type, true)
+    assert_equal(other === other.type, true)
+    refute(other === base.type, true)
+  end
+
   def test_invalid_init
     assert_raises TDRB::TokenTypeError do
       TDRB::Token.new(literal: YOUR_MOM, type: YOUR_MOM)

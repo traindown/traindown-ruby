@@ -37,9 +37,15 @@ module TDRB
     end
 
     def ==(t)
-      raise TokenArgumentError.new("Invalid comparison") if !t.is_a? Token
+      raise TokenArgsError.new("Invalid comparison") if !t.is_a? Token
 
       literal == t.literal && type == t.type
+    end
+
+    def ===(t)
+      raise TokenTypeError if !ALLOWED_TYPES.include?(t)
+
+      type == t
     end
 
     def movement?

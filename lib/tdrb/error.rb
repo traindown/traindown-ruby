@@ -5,6 +5,9 @@ module TDRB
   class ParseError < Error
   end
 
+  class TokenArgsError < Error
+  end
+
   class TokenError < Error
   end
 
